@@ -28,6 +28,7 @@ const movieController = {
       responseHelper(res, 500, null, "Internal Server Error");
     }
   },
+
   getMovieByGenre: async (req, res) => {
     try {
       const selectedGenre = await req.params.genre;

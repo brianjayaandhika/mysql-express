@@ -23,6 +23,10 @@ db.sync()
 
 app.use("/movies", movieRouter);
 
+app.get("/testmovie", (req, res) => {
+  res.send("MASOOOK");
+});
+
 app.all("*", (req, res) => {
   res.status(404).json({
     message: "API not found",
