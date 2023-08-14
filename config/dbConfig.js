@@ -1,9 +1,3 @@
-import dotenv from "dotenv";
-
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config();
-}
-
 const dbConfig = {
   name: process.env.DB_NAME,
   username: process.env.DB_USERNAME,
