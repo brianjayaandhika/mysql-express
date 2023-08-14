@@ -16,4 +16,6 @@ const dbConfig = {
   },
 };
 
+console.log(dbConfig);
+
 export default dbConfig;
