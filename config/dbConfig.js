@@ -1,4 +1,4 @@
-import "dotenv/config";
+import 'dotenv/config';
 
 const dbConfig = {
   name: process.env.DB_NAME,
@@ -6,7 +6,7 @@ const dbConfig = {
   password: process.env.DB_PASSWORD,
   options: {
     host: process.env.DB_HOST,
-    dialect: "mysql",
+    dialect: 'mysql',
     pool: {
       max: 5,
       min: 0,
@@ -15,7 +15,5 @@ const dbConfig = {
     },
   },
 };
-
-console.log(dbConfig);
 
 export default dbConfig;

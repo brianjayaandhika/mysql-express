@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 
-const movieModel = (sequelize) =>
-  sequelize.define('movies', {
+const galleryModel = (sequelize) =>
+  sequelize.define('galleries', {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
@@ -9,16 +9,11 @@ const movieModel = (sequelize) =>
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    year: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    genre: {
+    photo: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   });
 
-export default movieModel;
+export default galleryModel;

@@ -1,10 +1,11 @@
-import "dotenv/config";
+import 'dotenv/config';
 
-import express from "express";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
 
-import db from "./database/db.js";
-import movieRouter from "./routes/movieRouter.js";
+import db from './database/db.js';
+import movieRouter from './routes/movieRouter.js';
+import galleryRouter from './routes/galleryRouter.js';
 
 const port = process.env.PORT || 3000;
 
@@ -15,21 +16,20 @@ app.use(cors());
 
 db.sync()
   .then(() => {
-    console.log("Database Connected!");
+    console.log('Database Connected!');
   })
-  .catch((err) => {
-    console.log("Failed to connect!");
+  .catch(() => {
+    console.log('Failed to connect!');
   });
 
-app.use("/movies", movieRouter);
+app.use('/movies', movieRouter);
+app.use('/gallery', galleryRouter);
 
-app.get("/testmovie", (req, res) => {
-  res.send("MASOOOK");
-});
+app.use(express.static('temp/uploads'));
 
-app.all("*", (req, res) => {
+app.all('*', (req, res) => {
   res.status(404).json({
-    message: "API not found",
+    message: 'API not found',
   });
 });
 

@@ -1,8 +1,8 @@
 const responseHelpers = (res, status, data, message) => {
   const response = {
-    status: status === 500 ? "Error" : "Success",
+    status: status === 500 ? 'Error' : 'Success',
     statusCode: status,
-    message: status === 500 ? "Internal Server Error" : message,
+    message: status === 500 ? 'Internal Server Error' : message,
   };
 
   if (data) {
@@ -10,9 +10,9 @@ const responseHelpers = (res, status, data, message) => {
   }
 
   if (status === 500 || status === 404 || status === 400) {
-    const errorMessage = status === 404 ? "Api Not Found" : response.message;
+    const errorMessage = status === 404 ? 'Api Not Found' : response.message;
     return res.status(status).json({
-      status: "Error",
+      status: 'Error',
       statusCode: status,
       message: errorMessage,
     });
